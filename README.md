@@ -8,3 +8,5 @@ Features
 - What colour the blip should have for how many employees.
 - A green tick if the boss is there (you can also deactivate this).
 - As many blips for as many jobs as you need
+
+Support Discord: https://discord.gg/FdYQNrZttZ
