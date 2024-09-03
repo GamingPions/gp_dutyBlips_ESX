@@ -43,12 +43,13 @@ end)
 
 -- Return number if player disconnects and owns control center
 AddEventHandler('playerDropped', function(reason)
-	local src = source
+    local src = source
     local xPlayer = ESX.GetPlayerFromId(src)
     local playerJob = xPlayer.getJob().name
-    
-    if SharedFunctions.IsPlayerOnDuty(src) then
+		
+    if JobInformation[playerJob] and SharedFunctions.IsPlayerOnDuty(src) then
         JobInformation[playerJob].member = JobInformation[playerJob].member - 1
     end
+		
     ServerFunctions.RefreshBlipsColors(playerJob)
 end)
