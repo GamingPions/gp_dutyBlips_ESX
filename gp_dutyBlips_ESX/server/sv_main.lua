@@ -19,7 +19,6 @@ AddEventHandler("onResourceStart", function(resourceName)
         end
 
         for k,v in pairs(Players) do
-            print("Player: " .. v)
             TriggerClientEvent("gp_dutyBlips:SetBlips", v, JobInformation)
         end
     end
