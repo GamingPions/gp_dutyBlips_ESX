@@ -15,6 +15,7 @@ end)
 
 RegisterNetEvent("gp_dutyBlips:SetBlips")
 AddEventHandler("gp_dutyBlips:SetBlips", function(JobInformation)
+    print("Setting Blips")
     for JobName, BilpData in pairs(Config.BlipList) do
         for k,v in pairs(BilpData.JobBlips) do
             if DoesBlipExist(v.Blip) then

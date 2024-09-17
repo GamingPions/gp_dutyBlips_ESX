@@ -5,6 +5,7 @@ AddEventHandler("onResourceStart", function(resourceName)
         if Config.useUpdateChecker then UpdateChecker.checkForUpdate() end
 
         Citizen.Wait(1000)
+
         local Players = ESX.GetPlayers()
 
         -- Iterate over all jobs and insert them as false
@@ -18,6 +19,7 @@ AddEventHandler("onResourceStart", function(resourceName)
         end
 
         for k,v in pairs(Players) do
+            print("Player: " .. v)
             TriggerClientEvent("gp_dutyBlips:SetBlips", v, JobInformation)
         end
     end

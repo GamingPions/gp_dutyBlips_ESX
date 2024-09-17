@@ -12,7 +12,6 @@ lua54 'yes'
 shared_scripts {
   '@es_extended/imports.lua',
   '@es_extended/locale.lua',
-  'shared_functions.lua',
   'config.lua',
 }
 
@@ -21,6 +20,7 @@ client_scripts {
 }
 
 server_scripts {
+  'shared_functions.lua',
   'server/*.lua',
 }
 

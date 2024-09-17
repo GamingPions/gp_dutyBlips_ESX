@@ -15,8 +15,6 @@ SharedFunctions.IsPlayerOnDuty = function(src)
 end
 
 RegisterNetEvent('esx:setJob', function(source, job, lastJob)
-    local src = source
-    
     if lastJob ~= nil then
         -- Check if last job has any dutyBlips
         if Config.BlipList[lastJob["name"]] ~= nil then
@@ -37,7 +35,7 @@ RegisterNetEvent('esx:setJob', function(source, job, lastJob)
         -- Check if the new job has any dutyBlips
         if Config.BlipList[playerJob] ~= nil then
             -- Check if player is onduty
-            if SharedFunctions.IsPlayerOnDuty(src) then
+            if SharedFunctions.IsPlayerOnDuty(source) then
                 -- Increase member if player is onduty
                 JobInformation[playerJob].member = JobInformation[playerJob].member + 1
                 JobInformation[playerJob].showTick = ServerFunctions.IsBossOnline(playerJob)
@@ -46,5 +44,4 @@ RegisterNetEvent('esx:setJob', function(source, job, lastJob)
             end
         end
     end
-    
 end)
